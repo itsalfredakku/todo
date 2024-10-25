@@ -2,6 +2,10 @@
 
 # Install SurrealDB CLI
 curl -sSf https://install.surrealdb.com | sh
+# Apply in .bashrc
+echo 'export PATH=/home/vscode/.surrealdb:$PATH' >> ~/.bashrc
+# Reload .bashrc
+source ~/.bashrc
 
 # Install NVM and Node.js
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash

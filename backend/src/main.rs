@@ -28,7 +28,7 @@ async fn main() -> Result<()> {
         .layer(CorsLayer::very_permissive());
 
     // Start server!
-    let address = SocketAddr::from(([0, 0, 0, 0], 8000));
+    let address = SocketAddr::from(([0, 0, 0, 0], 8080));
     println!("Starting server on http://{address}");
     Ok(axum::Server::bind(&address)
         .serve(app.into_make_service())
@@ -63,7 +63,7 @@ async fn create(State(pool): State<SqlitePool>, Form(todo): Form<NewTodo>) -> Re
     )
     .execute(&pool)
     .await?;
-    Ok(Redirect::to("http://localhost:5173"))
+    Ok(Redirect::to("https://rust-svelte-web.devstroop.com"))
 }
 
 async fn read(State(pool): State<SqlitePool>, Path(id): Path<i64>) -> Result<Json<Todo>> {
@@ -86,7 +86,7 @@ async fn update(State(pool): State<SqlitePool>, Form(todo): Form<Todo>) -> Resul
         todo.done,
         todo.id
     ).execute(&pool).await?;
-    Ok(Redirect::to("http://localhost:5173"))
+    Ok(Redirect::to("https://rust-svelte-web.devstroop.com"))
 }
 
 async fn delete(State(pool): State<SqlitePool>, Path(id): Path<i64>) -> Result<Redirect> {
@@ -94,5 +94,5 @@ async fn delete(State(pool): State<SqlitePool>, Path(id): Path<i64>) -> Result<R
     sqlx::query!("DELETE FROM todos WHERE id = ?", id)
         .execute(&pool)
         .await?;
-    Ok(Redirect::to("http://localhost:5173"))
+    Ok(Redirect::to("https://rust-svelte-web.devstroop.com"))
 }
