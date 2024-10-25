@@ -1,22 +1,18 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/rust
 {
-	// Rust + Node.js Framework
-	"name": "Rust and Node.js",
-	"build": {
-		"dockerfile": ".devcontainer/Dockerfile"
-	},
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-	// Configure tool-specific properties.
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"rust-lang.rust-analyzer",
-				"esbenp.prettier-vscode"
-			]
-		}
-	}
+    "name": "Rust and Node.js",
+    "image": "mcr.microsoft.com/devcontainers/rust:latest",
+    "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rust-lang.rust-analyzer",
+                "esbenp.prettier-vscode",
+                "GitHub.copilot",
+                "ms-azuretools.vscode-docker",
+                "svelte.svelte-vscode"
+            ]
+        }
+    }
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
