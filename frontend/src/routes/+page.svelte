@@ -7,13 +7,13 @@
 
   // Delete todo
   async function deleteTodo(id: number) {
-    await fetch(`http://0.0.0.0:8000/delete/${id}`, { method: "POST" });
+    await fetch(`https://rust-svelte-api.devstroop.com/delete/${id}`, { method: "POST" });
     todos = todos.filter((todo) => todo.id !== id);
   }
 
   // Update todo
   async function updateTodo(todo: Todo) {
-    await fetch(`http://0.0.0.0:8000/update?id=${todo.id}&description=${todo.description}&done=${todo.done}`);
+    await fetch(`https://rust-svelte-api.devstroop.com/update?id=${todo.id}&description=${todo.description}&done=${todo.done}`);
   }
 </script>
 
@@ -21,7 +21,7 @@
   <h1 class="h1 text-center">Todos</h1>
 
   <div class="max-w-screen-md mx-auto">
-    <form action="http://0.0.0.0:8000/create" method="POST">
+    <form action="https://rust-svelte-api.devstroop.com/create" method="POST">
       <input
         class="input p-4 my-8"
         name="description"
