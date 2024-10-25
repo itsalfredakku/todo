@@ -3,7 +3,7 @@
 Install `sqlx-cli` using `cargo install sqlx-cli`, then run following:
 
 ```
-git clone https://github.com/knarkzel/todo
+git clone https://github.com/itsalfredakku/todo
 cd todo/
 ```
 
