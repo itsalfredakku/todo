@@ -5,4 +5,4 @@ sudo cloudflared service install eyJhIjoiMTc2Njk4YzY0N2YxMmQ5NjliYjg0NDY1YmY1MGF
 
 # Start SurrealDB
 # surreal start rocksdb:data
-surreal start --user root --pass root rocksdb:data
+surreal start --user root --pass root rocksdb:/tmp/surreal_data
