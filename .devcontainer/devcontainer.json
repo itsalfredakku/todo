@@ -10,7 +10,8 @@
                 "esbenp.prettier-vscode",
                 "GitHub.copilot",
                 "ms-azuretools.vscode-docker",
-                "svelte.svelte-vscode"
+                "svelte.svelte-vscode",
+                "dustypomerleau.yarra-valley"
             ]
         }
     },

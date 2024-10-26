@@ -1,4 +1,4 @@
-# todo
+# Rust+SurrealDB+Svelte Boilerplate
 
 Install `sqlx-cli` using `cargo install sqlx-cli`, then run following:
 
@@ -7,18 +7,18 @@ git clone https://github.com/itsalfredakku/todo
 cd todo/
 ```
 
-## backend
+## api
 
 ```
-cd backend/
+cd api/
 sqlx database setup
 cargo run
 ```
 
-## frontend
+## web
 
 ```
-cd frontend/
+cd web/
 npm install
 npm run dev
 ```
