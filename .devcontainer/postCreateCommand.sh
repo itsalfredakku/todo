@@ -20,8 +20,14 @@ nvm alias default 20
 # Install Rust CLI tool (sqlx-cli)
 cargo install sqlx-cli
 
-
+# Move to temporary directory
+cd /tmp
 # Install Cloudflared
 curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
 # Install the package
 sudo dpkg -i cloudflared.deb
+# Remove the package
+rm cloudflared.deb
+
+# Move back to the workspace
+cd /workspace
