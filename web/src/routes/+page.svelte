@@ -9,13 +9,13 @@
 
   // Delete todo
   async function deleteTodo(id: number) {
-    await fetch(`${apiEndpoint}/delete/${id}`, { method: "POST" });
+    await fetch(`${apiEndpoint}/api/todos/delete/${id}`, { method: "POST" });
     todos = todos.filter((todo) => todo.id !== id);
   }
 
   // Update todo
   async function updateTodo(todo: Todo) {
-    await fetch(`${apiEndpoint}/update?id=${todo.id}&description=${todo.description}&done=${todo.done}`);
+    await fetch(`${apiEndpoint}/api/todos/update?id=${todo.id}&description=${todo.description}&done=${todo.done}`);
   }
 </script>
 
@@ -23,7 +23,7 @@
   <h1 class="h1 text-center">Todos</h1>
 
   <div class="max-w-screen-md mx-auto">
-    <form action="${apiEndpoint}/create" method="POST">
+    <form action="${apiEndpoint}/todos/create" method="POST">
       <input
         class="input p-4 my-8"
         name="description"
